@@ -1,0 +1,58 @@
+#Questão 2 / 4
+#Felipe Augusto Honorato Santana RU 4622517
+
+#Tela de boas vindas / apresentação do cardápio.
+print('Seja bem vindo a loja de Açaí e Cupuaçu do Felipe Augusto Honorato Santana.')
+print('********************************Cardápio***********************************')
+print('*******************| Tamanho | Açaí (AC) | Cupuaçu (CP) |******************')
+print('*******************| P | R$12,00 | R$10,00 |******************')
+print('*******************| M | R$17,00 | R$15,00 |******************')
+print('*******************| G | R$21,00 | R$19,00 |******************')
+print('***************************************************************************')
+
+total_pedido = 0
+
+
+#Escolha do sabor.
+while True:
+resposta1 = input('Informe o sabor desejado: (AC para Açaí / CP para Cupuaçu) ').upper()
+
+if resposta1 not in ['AC', 'CP']:
+print('Sabor inválido. Tente novamente.')
+continue
+
+#Escolha do tamanho.
+resposta2 = input('Escolha o tamanho desejado: (P / M ou G) ').upper()
+
+if resposta2 not in ['P', 'M', 'G']:
+print('Tamanho inválido. Tente novamente.')
+continue
+
+
+#Opção Açaí
+if resposta1 == 'AC':
+if resposta2 == 'P':
+total_pedido += 12
+elif resposta2 == 'M':
+total_pedido += 17
+elif resposta2 == 'G':
+total_pedido += 21
+
+#Opção Cupuaçu
+if resposta1 == 'CP':
+if resposta2 == 'P':
+total_pedido += 10
+elif resposta2 == 'M':
+total_pedido += 15
+elif resposta2 == 'G':
+total_pedido += 19
+
+#Perguntar se deseja incluir produto
+
+incluir = input("Deseja incluir mais um item? (Digite 'SIM' para continuar, 'NÃO' para encerrar): ").lower()
+
+if incluir != 'sim':
+break
+
+#Exibe valor total do pedido
+print(f'Valor total a ser pago: R$ {total_pedido:.2f} ')
